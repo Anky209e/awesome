@@ -1,152 +1,156 @@
---[[
-#=====================================================================================
-#                               ArcoLinuxD
-#
-# Author  : Erik Dubois at http://www.erikdubois.be
-# License : Distributed under the terms of GNU GPL version 2 or later
-# Documentation : http://erikdubois.be/category/linux/aureola/
-#======================================================================================
-
-
-]]
-
 conky.config = {
 
 	--Various settings
 
 	background = true, 							-- forked to background
-	cpu_avg_samples = 2,						-- The number of samples to average for CPU monitoring.
-	diskio_avg_samples = 10,					-- The number of samples to average for disk I/O monitoring.
-	double_buffer = true,						-- Use the Xdbe extension? (eliminates flicker)
-	if_up_strictness = 'address',				-- how strict if testing interface is up - up, link or address
-	net_avg_samples = 2,						-- The number of samples to average for net data
-	no_buffers = true,							-- Subtract (file system) buffers from used memory?
-	temperature_unit = 'celsius',				-- fahrenheit or celsius
-	text_buffer_size = 2048,					-- size of buffer for display of content of large variables - default 256
-	update_interval = 1,						-- update interval
-	imlib_cache_size = 0,                       -- disable image cache to get a new spotify cover per song
-
+	cpu_avg_samples = 2,
+	diskio_avg_samples = 10,
+	double_buffer = true,
+	if_up_strictness = 'address',
+	net_avg_samples = 2,
+	no_buffers = true,
+	temperature_unit = 'celsius',
+	text_buffer_size = 2048,
+	update_interval = 1,
+	imlib_cache_size = 0,                       --spotify cover
 
 	--Placement
 
-	alignment = 'middle_right',					-- top-left,top-middle,top-right,bottom-left,bottom-middle,bottom-right,
-												-- middle-left,middle-middle,middle-right,none
-	--Arch Duoscreen
-	--gap_x = -1910,
-	gap_x = 10,									-- pixels between right or left border
-	gap_y = 10,									-- pixels between bottom or left border
-	minimum_height = 200,						-- minimum height of window
-	minimum_width = 280,						-- minimum height of window
-	maximum_width = 280,						-- maximum height of window
+	alignment = 'middle_right',
+	gap_x = 10,
+	gap_y = 10,
+	minimum_height = 1060,
+	minimum_width = 200,
+	maximum_width = 200,
 
 	--Graphical
 
-	border_inner_margin = 5, 					-- margin between border and text
-	border_outer_margin = 5, 					-- margin between border and edge of window
+	border_inner_margin = 10, 					-- margin between border and text
+	border_outer_margin = 1, 					-- margin between border and edge of window
 	border_width = 0, 							-- border width in pixels
-	default_bar_width = 280,					-- default is 0 - full width
-	default_bar_height = 10,					-- default is 6
-	default_gauge_height = 25,					-- default is 25
-	default_gauge_width =40,					-- default is 40
-	default_graph_height = 40,					-- default is 25
-	default_graph_width = 153,					-- default is 0 - full width
-	default_shade_color = '#000000',			-- default shading colour
-	default_outline_color = '#000000',			-- default outline colour
-	draw_borders = false,						-- draw borders around text
-	draw_graph_borders = true,					-- draw borders around graphs
-	draw_shades = false,						-- draw shades
-	draw_outline = false,						-- draw outline
-	stippled_borders = 0,						-- dashing the border
+	default_bar_width = 280,
+	default_bar_height = 10,
+	default_gauge_height = 25,
+	default_gauge_width =40,
+	default_graph_height = 40,
+	default_graph_width = 153,
+	default_shade_color = '#000000',
+	default_outline_color = '#000000',
+	draw_borders = false,						--draw borders around text
+	draw_graph_borders = true,
+	draw_shades = false,
+	draw_outline = false,
+	stippled_borders = 0,
 
 	--Textual
-
-	extra_newline = false,						-- extra newline at the end - for asesome's wiboxes
-	format_human_readable = true,				-- KiB, MiB rather then number of bytes
-	font = 'Noto Mono:size=11:regular',  			-- font for complete conky unless in code defined
-	max_text_width = 0,							-- 0 will make sure line does not get broken if width too smal
-	max_user_text = 16384,						-- max text in conky default 16384
-	override_utf8_locale = true,				-- force UTF8 requires xft
-	short_units = true,							-- shorten units from KiB to k
-	top_name_width = 21,						-- width for $top name value default 15
-	top_name_verbose = false,					-- If true, top name shows the full command line of  each  process - Default value is false.
-	uppercase = false,							-- uppercase or not
-	use_spacer = 'none',						-- adds spaces around certain objects to align - default none
-	use_xft = true,								-- xft font - anti-aliased font
-	xftalpha = 1,								-- alpha of the xft font - between 0-1
+	
+	extra_newline = false,
+	format_human_readable = true,
+	font = 'ubuntu:size=11',
+	max_text_width = 0,
+	max_user_text = 16384,
+	override_utf8_locale = true,
+	short_units = true,
+	top_name_width = 21,
+	top_name_verbose = false,
+	uppercase = false,
+	use_spacer = 'none',
+	use_xft = true,
+	xftalpha = 1,
 
 	--Windows
 
-	own_window = true,							-- create your own window to draw
-	own_window_argb_value = 150,				    -- real transparency - composite manager required 0-255
-	own_window_argb_visual = true,				-- use ARGB - composite manager required
-	own_window_class = 'Conky',					-- manually set the WM_CLASS name for use with xprop
-	own_window_colour = '#000000',				-- set colour if own_window_transparent no
-	own_window_hints = 'undecorated,below,above,sticky,skip_taskbar,skip_pager',  -- if own_window true - just hints - own_window_type sets it
-	own_window_transparent = false,				-- if own_window_argb_visual is true sets background opacity 0%
-	own_window_title = 'system_conky',			-- set the name manually  - default conky "hostname"
-	own_window_type = 'override',				    -- if own_window true options are: normal/override/dock/desktop/panel
-
+	own_window = true,
+	own_window_argb_value = 150,
+	own_window_argb_visual = true,
+	own_window_class = 'Conky',
+	own_window_colour = '#000000',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_transparent = no,
+	own_window_title = 'system_conky',
+	own_window_type = 'normal',-- # options are: normal/override/dock/desktop/panel
+	
 
 	--Colours
 
-	default_color = '#ff0000',  				-- default color and border color
-	color1 = '#FFFFFF',
-	color2 = '#7aa2e2',
-	color3 = '#cccccc',
+	default_color = '#000000',  				-- default color and border color
+	color1 = '#aaaaaa', 
+	color2 = '#FF6500', 
+	color3 = '#888888', 
 	color4 = '#BDBDBD',
-	color5 = '#CCCCCC',
-	color6 = '#aa0000',
+	color5 = '#CCCCCC', 
+	color6 = '#FFFFFF',
 
 	--Signal Colours
-	color7 = '#1F7411',  						--green
-	color8 = '#FFA726',  						--orange
-	color9 = '#F1544B',  						--firebrick
-
-
-	--Lua
-
-
+	color7 = '#1F7411',  --green
+	color8 = '#FFA726',  --orange
+	color9 = '#F1544B',  --firebrick
 };
+
+
 conky.text = [[
-${color1}${alignc}S Y S T E M    I N F O${color}
-${color1}${hr}${color}
-${color1}Host:${alignr}${color2}${nodename}${color}
-#${color1}Kernel:${color2}${alignr}$kernel${color}
-#${color1}Uptime:${color2}${alignr}${uptime}${color}
-#${color1}UTC:${color2}${alignr}${utime %H:%M}${color}
+${voffset 5}${color6}${font ubuntu:size=16:bold}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}}${font}
+#
+${voffset 10}${color1}${font ubuntu:size=11:regular}Base :${font}${color6} $distribution $sysname $kernel
+#${voffset 5}${color1}${font ubuntu:size=11:regular}${font ubuntu:size=11:regular}${execi 10000 lsb_release -d | cut -f 2| tr "[:upper:]" "[:upper:]"} ${font}${color6}${alignr}$kernel
+${voffset 0}${color1}${font ubuntu:size=11:regular}Uptime:${font}${color6} $uptime
+#
 
-${color1}${goto 60}Used${alignr}Size${color}
-${color1}Root${goto 60}${color2}${fs_used /}${alignr}${fs_size /}${color}
-#${color1}Home${goto 60}${color2}${fs_used /home}${alignr}${fs_size /home}${color}
+${voffset 5}${color1}${font ubuntu:size=11:regular}CPU  ${font}${color6}${freq_g} GHz  ${stippled_hr 3 3}
+${voffset 5}${color1}${font ubuntu:size=11:regular}CPU1 ${font}${color6}${cpu cpu1}%  ${color3}${execi 5 sensors|grep 'Core 0'|awk '{print $3}'}${goto 155}${color1}${font ubuntu:size=11:regular}CPU2  ${font}${color6}${cpu cpu2}%  ${color3}${execi 5 sensors|grep 'Core 1'|awk '{print $3}'}
+# cpugraphs
+${color6}${cpugraph cpu1 35,135 ffffff ffffff} ${alignr}${cpugraph cpu2 35,135 ffffff ffffff}
+#
+#
+${voffset 5}${color1}${font ubuntu:size=11:regular}RAM usage: ${font}${color6}$mem${color1}${alignr}${font ubuntu:size=11:regular}Free: ${font}${color6}$memeasyfree
+${color6}${membar}
+#
+#
 
-${color1}${goto 60}Mem${alignr}Max${color}
-${color1}RAM${goto 60}${color2}${mem}${alignr}${memmax}${color}
-${color1}Swap${goto 60}${color2}${swap}${alignr}${swapmax}${color}
+${voffset 5}${color1}${font ubuntu:size=11:regular}${font ubuntu:size=11:regular}Disk  ${font}${color6}${stippled_hr 3 3}
+${voffset 5}${color1}${font ubuntu:size=11:regular}SSD: ${font}${color6}${fs_used /}${color1}${alignr}${font ubuntu:size=11:regular}Free: ${font}${color6}${fs_free /}
+${color6}${fs_bar /}
+#
+#
+# disk graphs
+${color6}${diskiograph_read sda 35,135 ffffff ffffff} ${alignr}${diskiograph_write sda 35,135 ffffff ffffff}
+${voffset -5}${color1}${font ubuntu:size=11:regular}Reads: ${font}${color6}${diskio_read sda} ${goto 158}${color1}${font ubuntu:size=11:regular}Writes: ${font}${color6}${diskio_write sda}
+#
+#
+# network
 
-${color1}CPU:${goto 60}Used${alignr}GHz${color}
-${color1}Avg${goto 60}${color2}${if_match ${cpu cpu0}<50}  ${cpu cpu0}\
-${else}${if_match ${cpu cpu0}<=100}${color9} ${cpu cpu0}\
-${else}${cpu cpu0}${endif}${endif}%${alignr}${freq_g}${color}
+${voffset 5}${color1}${font ubuntu:size=11:regular}Ethernet  ${color6}${stippled_hr 3 3}
+#${color1}${font ubuntu:size=11:regular}IP address: ${font}${color6}${addr enp0s31f6}
+#${color1}${font ubuntu:size=11:regular}External IP: ${font}${color6}${execi 3600 wget -q -O - checkip.dyndns.org | sed -e 's/[^[:digit:]\|.]//g'}
+${color1}${font ubuntu:size=11:regular}Connections: ${font}${color6}${tcp_portmon 1 65535 count}
+${color1}${font ubuntu:size=11:regular}Download speed: ${font}${color6}${downspeed enp0s31f6}
+${color1}${font ubuntu:size=11:regular}Upload speed: ${font}${color6}${upspeed enp0s31f6}
+#
+# netw graphs
+${voffset 5}${color6}${downspeedgraph enp0s31f6 35,135 ffffff ffffff 17000 -l} $alignr${upspeedgraph enp0s31f6 35,135 ffffff ffffff 3000 -l}
+#
+${voffset -5}${color1}${goto 90}${font ubuntu:size=11:regular}Received ${alignr 5}Sent
+${color1}${font ubuntu:size=11:regular}Session:${font}${color6}${goto 90}${totaldown enp0s31f6} ${alignr 5}${totalup enp0s31f6}
+${color1}${font ubuntu:size=11:regular}Yesterday:${font}${color6}${goto 90}${execi 60 vnstat -i enp0s31f6 | grep "yesterday" | awk '{print $2 $3}'}${alignr 5}${execi 60 vnstat -i enp0s31f6 | grep "yesterday" | awk '{print $5 $6}'}
+${color1}${font ubuntu:size=11:regular}Today:${font}${color6}${goto 90}${execi 60 vnstat -i enp0s31f6 | grep "today" | awk '{print $2 $3}'}${alignr 5}${execi 60 vnstat -i enp0s31f6 | grep "today" | awk '{print $5 $6}'}
+${color1}${font ubuntu:size=11:regular}Month:${font}${color6}${goto 90}${execi 60 vnstat -i enp0s31f6 -m | grep "`date +"%Y-%m"`" | awk '{print $2 $3}'}${alignr 5}${execi 60 vnstat -i enp0s31f6 -m | grep "`date +"%Y-%m"`" | awk '{print $5 $6}'}
+#
+#
+# Processes
 
-${color1}${alignc}S H O R T C U T    K E Y S${color}
-${color1}${hr}${color}
-${color1}[S]+[Shift]+D${alignr}${color2}Main Menu${color}
-${color1}[Alt]+F2${alignr}${color2}Alt Menu${color}
-${color1}[Alt]+F3${alignr}${color2}Alt Menu${color}
-${color1}${hr}${color}
-${color1}[S]+Enter${alignr}${color2}Terminal${color}
-${color1}[S]+[Shift]+Enter${alignr}${color2}File Manager${color}
-${color1}[Ctrl]+[Alt]+V${alignr}${color2}Vivaldi${color}
-${color1}[S]+F2${alignr}${color2}Editor${color}
-${color1}[S]+F6${alignr}${color2}Media Player${color}
-${color1}[S]+[Space]${alignr}${color2}Change Layout${color}
-${color1}[Ctrl]+[Shift]+Esc${alignr}${color2}Task Manager${color}
-${color1}[Ctrl]+[Alt]+U${alignr}${color2}Volume Control${color}
-${color1}[PrtSc]${alignr}${color2}Screenshot${color}
-${color1}[S]+[Shift]+R${alignr}${color2}Restart${color}
-${color1}${hr}${color}
-${color1}[S]+[Shift]+Q${alignr}${color2}Stop application${color}
-${color1}[S]+x${alignr}${color2}Exit${color}
-${color1}${hr}${color}
-${color1}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}}${alignr}${execi 6000 lsb_release -a | grep 'Release'|awk {'print $2""$3""$4""$5'}}${color}
-]];
+${voffset 5}${color1}${font ubuntu:size=11:regular}Processes  ${color6}${stippled_hr 3 3}
+${color1}${font ubuntu:size=11:regular}Name${goto 180}CPU%${alignr}MEM%${font}
+${color4}${top name 1} ${goto 180}${top cpu 1}${alignr}${top mem 1}${color6}
+${top name 2} ${goto 180}${top cpu 2}${alignr}${top mem 2}
+${top name 3} ${goto 180}${top cpu 3}${alignr}${top mem 3}
+${top name 4} ${goto 180}${top cpu 4}${alignr}${top mem 4}
+${top name 5} ${goto 180}${top cpu 5}${alignr}${top mem 5}
+
+${voffset 5}${color1}${font ubuntu:size=11:regular}Memory  ${color6}${stippled_hr 3 3}${font}
+${color1}${font ubuntu:size=11:regular}Name${goto 180}MEM%${alignr}MEM${font}
+${color4}${top_mem name 1} ${goto 180}${top_mem mem 1}${alignr}${top_mem mem_res 1}${color6}
+${top_mem name 2} ${goto 180}${top_mem mem 2}${alignr}${top_mem mem_res 2}
+${top_mem name 3} ${goto 180}${top_mem mem 3}${alignr}${top_mem mem_res 3}
+${top_mem name 4} ${goto 180}${top_mem mem 4}${alignr}${top_mem mem_res 4}
+${top_mem name 5} ${goto 180}${top_mem mem 5}${alignr}${top_mem mem_res 5}
+]]
