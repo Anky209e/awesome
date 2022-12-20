@@ -1161,7 +1161,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")
 awful.spawn.with_shell("sudo timedatectl set-ntp True")
-awful.spawn.with_shell("picom --experimental-backends -b --config ~/.config/awesome/picom.conf")
+awful.spawn.with_shell("picom -b --config ~/.config/awesome/picom.conf")
 
 
 -- awful.spawn.with_shell("mpv ~/.fun/output.mp3")
