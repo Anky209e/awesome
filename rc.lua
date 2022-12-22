@@ -398,7 +398,7 @@ globalkeys = my_table.join(
         {description = filemanager, group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "c", function() awful.util.spawn("catfish") end,
         {description = "catfish", group = "alt+ctrl"}),
-    awful.key({ modkey}, "w", function() awful.util.spawn( "flatpak run org.mozilla.firefox" ) end,
+    awful.key({ modkey}, "w", function() awful.util.spawn( "opera" ) end,
         {description = browser2, group = "super"}),
     awful.key({ modkey1, altkey   }, "g", function() awful.util.spawn( browser3 ) end,
         {description = browser3, group = "alt+ctrl"}),
@@ -777,7 +777,7 @@ globalkeys = my_table.join(
               {description = "show the menubar", group = "super"})
     --]]
 
-    awful.key({ altkey }, "x",
+    awful.key({ altkey }, "p",
               function ()
                   awful.prompt.run {
                     prompt       = "Run Lua code: ",

@@ -28,11 +28,11 @@ run numlockx on
 flatpak run net.cozic.joplin_desktop
 feh --bg-fill --random ~/wallpapers/* 
 #run applications from startup
-# run flameshot
+run flameshot
 
 # run optimus-manager-qt
 
-run betterlockscreen -u "wallpapers"
+run betterlockscreen -u "~/wallpapers"
 # run firefox
 run dropbox
 
