@@ -22,7 +22,7 @@ run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 run numlockx on
 # run volumeicon
 #run nitrogen --restore
-# run conky -c $HOME/.config/awesome/system-overview
+run conky -c $HOME/.config/awesome/system-overview
 # run conky
 #you can set wallpapers in themes as well
 flatpak run net.cozic.joplin_desktop
