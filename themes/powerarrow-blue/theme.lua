@@ -19,18 +19,18 @@ theme.dir                                       = os.getenv("HOME") .. "/.config
 theme.wallpaper                                 = theme.dir .. "/wallpaper.jpg"
 theme.font                                      = "Fira Code 11"
 theme.taglist_font                              = "Fira Code 10"
-theme.fg_normal                                 = "#50fa7b"
-theme.fg_focus                                  = "#f8f8f2"
+theme.fg_normal                                 = "#f8f8f2"
+theme.fg_focus                                  = "#50fa7b"
 theme.fg_urgent                                 = "#b74822"
-theme.bg_normal                                 = "#000000"
-theme.bg_focus                                  = "#ff5555"
-theme.bg_urgent                                 = "#3F3F3F"
+theme.bg_normal                                 = "#282a36"
+theme.bg_focus                                  = "#44475a"
+theme.bg_urgent                                 = "#ff5555"
 theme.taglist_fg_focus                          = "#bd93f9"
-theme.tasklist_bg_focus                         = "#ff5555"
-theme.tasklist_fg_focus                         = "#282a36"
+theme.tasklist_bg_focus                         = "#282a36"
+theme.tasklist_fg_focus                         = "#50fa7b"
 theme.border_width                              = dpi(2)
 theme.border_normal                             = "#3F3F3F"
-theme.border_focus                              = "#ff5555"
+theme.border_focus                              = "#282a36"
 theme.border_marked                             = "#CC9393"
 theme.titlebar_bg_focus                         = "#3F3F3F"
 theme.titlebar_bg_normal                        = "#3F3F3F"
@@ -207,7 +207,7 @@ local mem = lain.widget.mem({
 
 local spoic = wibox.widget.imagebox(theme.widget_music_on)
 local spotify_w = lain.widget.spotify({
-    font = 'Ubuntu Mono 10',
+    font = 'Fira Code 10',
     dim_when_paused = true,
     dim_opacity = 0.5,
     max_length = -1,
@@ -321,7 +321,7 @@ theme.volume = lain.widget.alsa({
 local neticon = wibox.widget.imagebox(theme.widget_net)
 local net = lain.widget.net({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, "#50fa7b", " " .. net_now.received .. " ↓↑ " .. net_now.sent .. " "))
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, " " .. net_now.received .. " ↓↑ " .. net_now.sent .. " "))
     end
 })
 
@@ -399,7 +399,9 @@ function theme.at_screen_connect(s)
             s.mypromptbox,
         },
         
-        s.mytasklist, -- Middle widget
+        spr, --middle space
+
+        -- s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             
@@ -424,16 +426,16 @@ function theme.at_screen_connect(s)
             
             -- arrow("#000000", "#44475a"),
             -- pl(task, "#44475a"),
-            wibox.container.background(wibox.container.margin(wibox.widget { spoic, spotify_w, layout = wibox.layout.align.horizontal }, dpi(3), dpi(4)), "#000000"),
+            wibox.container.background(wibox.container.margin(wibox.widget { spoic, spotify_w, layout = wibox.layout.align.horizontal }, dpi(3), dpi(4)), theme.bg_normal),
             -- arrow("#000000", "#44475a"),
             
             -- wibox.container.background(wibox.container.margin(wibox.widget { nil, wibox.widget.systray(), layout = wibox.layout.align.horizontal }, dpi(3), dpi(4)), "#44475a"),
             -- arrow("#000000", "#44475a"),
-            wibox.container.background(wibox.container.margin(wibox.widget { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), "#000000"),
+            wibox.container.background(wibox.container.margin(wibox.widget { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), theme.bg_normal),
             -- arrow("#000000", "#44475a"),
-            wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), "#000000"),
+            wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), theme.bg_normal),
             -- arrow("#000000", "#44475a"),
-            wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), "#000000"),
+            wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), theme.bg_normal),
             -- arrow("#497B96", "#889FA7"),
             
             -- arrow("#889FA7", "#497B96"),
@@ -441,13 +443,13 @@ function theme.at_screen_connect(s)
             -- arrow("#497B96", "#889FA7"),
             -- wibox.container.background(wibox.container.margin(wibox.widget { weathericon, theme.weather.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#889FA7"),
             -- arrow("#000000", "#44475a"),
-            wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#000000"),
+            wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), theme.bg_normal),
 
             -- arrow("#000000", "#44475a"),
-            wibox.container.background(wibox.container.margin(wibox.widget { neticon, net.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#000000"),
+            wibox.container.background(wibox.container.margin(wibox.widget { neticon, net.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), theme.bg_normal),
 
             -- arrow("#000000", "#44475a"),
-            wibox.container.background(wibox.container.margin(clock, dpi(4), dpi(8)), "#000000"),
+            wibox.container.background(wibox.container.margin(clock, dpi(4), dpi(8)), theme.bg_normal),
             -- arrow("#000000", "alpha"),
             --]]
             
@@ -456,10 +458,27 @@ function theme.at_screen_connect(s)
             -- brightness_widget(),
             
             wibox.widget.systray(),
-            s.mylayoutbox,
+            -- s.mylayoutbox,
             
         },
     }
+     -- Create the bottom wibox
+     s.mybottomwibox = awful.wibar({ position = "bottom", screen = s, border_width = 0, height = dpi(15), bg = theme.bg_normal, fg = theme.fg_normal })
+
+     -- Add widgets to the bottom wibox
+     s.mybottomwibox:setup {
+         layout = wibox.layout.align.horizontal,
+         { -- Left widgets
+             layout = wibox.layout.fixed.horizontal,
+         },
+         s.mytasklist, -- Middle widget
+         { -- Right widgets
+             layout = wibox.layout.fixed.horizontal,
+            --  wibox.widget.systray(),
+             s.mylayoutbox,
+
+         },
+     }
 end
 
 return theme

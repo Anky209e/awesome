@@ -985,8 +985,8 @@ awful.rules.rules = {
     { rule = { class = editorgui },
           properties = { maximized = true } },
 
-    { rule = { class = "Geany" },
-          properties = { maximized = false, floating = false } },
+    { rule = { class = "Picture in Picture" },
+          properties = { maximized = false, floating = true } },
 
     -- { rule = { class = "Thunar" },
     --     properties = { maximized = false, floating = false } },
@@ -1035,6 +1035,7 @@ awful.rules.rules = {
           "copyq",  -- Includes session name in class.
         },
         class = {
+          "Picture in Picture",
           "Arandr",
           "Arcolinux-welcome-app.py",
           "Blueberry",
