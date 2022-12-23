@@ -120,7 +120,7 @@ local modkey1      = "Control"
 -- personal variables
 --change these variables if you want
 local browser1          = "google-chrome"
-local browser2          = "firefox"
+local browser2          = "opera"
 local browser3          = "github-desktop" --Using for github desktop
 local editor            = os.getenv("EDITOR") or "code"
 local editorgui         = "code"
@@ -134,7 +134,7 @@ local virtualmachine    = "virtualbox"
 awful.util.terminal = terminal
 -- awful.util.tagnames = {  "➊", "➋", "➌", "➍", "➎", "➏", "➐", "➑", "➒" }
 -- awful.util.tagnames = { "[1]", "[2]", "[3]", "[4]", "[5]", "[6]", "[7]", "[8]", "[9]"}
-awful.util.tagnames = {  "web", "dev", "code", "git", "music", "file", "notes", "social", "gaara" }
+awful.util.tagnames = {  "<web>", "<dev>", "<code>", "<git>", "<music>", "<file>", "<notes>", "<social>", "YEA" }
 -- awful.util.tagnames = {  "[web]", "[dev]", "[code]", "[git]", "[music]", "[file]", "[todo]", "[disc]", "[class]" }
 -- awful.util.tagnames = {  "web/", "dev/", "code/", "git/", "music/", "file/", "todo/", "disc/", "class" }
 -- awful.util.tagnames = {  "a", "r", "c", "h", "l", "i", "n", "u", "x" }
@@ -163,7 +163,7 @@ awful.layout.layouts = {
     --awful.layout.suit.corner.se,
     --lain.layout.cascade,
     --lain.layout.cascade.tile,
-    --lain.layout.centerwork,
+    lain.layout.centerwork,
     lain.layout.centerwork.horizontal,
     --lain.layout.termfair,
     -- lain.layout.termfair.center,
