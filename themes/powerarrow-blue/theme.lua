@@ -405,59 +405,11 @@ function theme.at_screen_connect(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             
-            
-            --[[ using shapes
-            pl(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, "#343434"),
-            pl(task, "#343434"),
-            --pl(wibox.widget { mailicon, mail and theme.mail.widget, layout = wibox.layout.align.horizontal }, "#343434"),
-            pl(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, "#777E76"),
-            pl(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, "#4B696D"),
-            pl(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, "#4B3B51"),
-            --pl(wibox.widget { fsicon, theme.fs and theme.fs.widget, layout = wibox.layout.align.horizontal }, "#CB755B"),
-            pl(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, "#8DAA9A"),
-            pl(wibox.widget { neticon, net.widget, layout = wibox.layout.align.horizontal }, "#C0C0A2"),
-            pl(binclock.widget, "#777E76"),
-            --]]
-            -- using separators
-            --arrow(theme.bg_normal, "#343434"),
-            --wibox.container.background(wibox.container.margin(wibox.widget { mailicon, mail and mail.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(7)), "#343434"),
-            -- arrow("alpha", "#497B96"),
-            -- wibox.container.background(wibox.container.margin(wibox.widget { mpdicon, lain.theme.github(), layout = wibox.layout.align.horizontal }, dpi(3), dpi(6)), "#497B96"),
-            
-            -- arrow("#000000", "#44475a"),
-            -- pl(task, "#44475a"),
+
             wibox.container.background(wibox.container.margin(wibox.widget { spoic, spotify_w, layout = wibox.layout.align.horizontal }, dpi(3), dpi(4)), theme.bg_normal),
-            -- arrow("#000000", "#44475a"),
-            
-            -- wibox.container.background(wibox.container.margin(wibox.widget { nil, wibox.widget.systray(), layout = wibox.layout.align.horizontal }, dpi(3), dpi(4)), "#44475a"),
-            -- arrow("#000000", "#44475a"),
-            wibox.container.background(wibox.container.margin(wibox.widget { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), theme.bg_normal),
-            -- arrow("#000000", "#44475a"),
-            wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), theme.bg_normal),
-            -- arrow("#000000", "#44475a"),
-            wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), theme.bg_normal),
-            -- arrow("#497B96", "#889FA7"),
-            
-            -- arrow("#889FA7", "#497B96"),
-            -- wibox.container.background(wibox.container.margin(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(4)), "#497B96"),
-            -- arrow("#497B96", "#889FA7"),
-            -- wibox.container.background(wibox.container.margin(wibox.widget { weathericon, theme.weather.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#889FA7"),
-            -- arrow("#000000", "#44475a"),
-            wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), theme.bg_normal),
-
-            -- arrow("#000000", "#44475a"),
-            wibox.container.background(wibox.container.margin(wibox.widget { neticon, net.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), theme.bg_normal),
-
-            -- arrow("#000000", "#44475a"),
-            wibox.container.background(wibox.container.margin(clock, dpi(4), dpi(8)), theme.bg_normal),
-            -- arrow("#000000", "alpha"),
-            --]]
-            
-            
-            -- todo_widget(),
-            -- brightness_widget(),
-            
             wibox.widget.systray(),
+            wibox.container.background(wibox.container.margin(clock, dpi(4), dpi(8)), theme.bg_normal),
+            
             -- s.mylayoutbox,
             
         },
@@ -475,6 +427,12 @@ function theme.at_screen_connect(s)
          { -- Right widgets
              layout = wibox.layout.fixed.horizontal,
             --  wibox.widget.systray(),
+             wibox.container.background(wibox.container.margin(wibox.widget { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), theme.bg_normal),
+             wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), theme.bg_normal),
+             wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), theme.bg_normal),
+             wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), theme.bg_normal),
+             wibox.container.background(wibox.container.margin(wibox.widget { neticon, net.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), theme.bg_normal),
+             
              s.mylayoutbox,
 
          },
