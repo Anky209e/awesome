@@ -1165,7 +1165,7 @@ awful.spawn.with_shell("sudo timedatectl set-ntp True")
 awful.spawn.with_shell("picom -b --config ~/.config/awesome/picom.conf")
 
 
-awful.spawn.with_shell("mpv /home/sugarman/.config/awesome/start.opus")
+awful.spawn.with_shell("mpv /home/sugarman/.config/awesome/start.mp3")
 
     
 
