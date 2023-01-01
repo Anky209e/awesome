@@ -25,7 +25,7 @@ run numlockx on
 run conky -c $HOME/.config/awesome/system-overview
 # run conky
 #you can set wallpapers in themes as well
-flatpak run net.cozic.joplin_desktop
+# flatpak run net.cozic.joplin_desktop
 feh --bg-fill --random ~/wallpapers/* 
 #run applications from startup
 run flameshot
@@ -34,7 +34,7 @@ run flameshot
 
 run betterlockscreen -u "~/wallpapers"
 # run firefox
-run dropbox
+# run dropbox
 
 
 #run insync start

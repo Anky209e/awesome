@@ -943,6 +943,9 @@ awful.rules.rules = {
     { rule = { class = "Joplin" },
         properties = { screen = 1, tag = awful.util.tagnames[7], switchtotag = false } },
 
+    { rule = { class = "notion-snap" },
+        properties = { screen = 1, tag = awful.util.tagnames[7], switchtotag = false } },
+
     { rule = { class = mediaplayer },
       properties = { screen = 1, tag = awful.util.tagnames[5], switchtotag = true  } },
 
@@ -1166,6 +1169,11 @@ awful.spawn.with_shell("picom -b --config ~/.config/awesome/picom.conf")
 
 
 awful.spawn.with_shell("mpv /home/sugarman/.config/awesome/start.mp3")
+
+-- Loading Sound devices and drivers
+awful.spawn.with_shell("pulseaudio -k")
+awful.spawn.with_shell("pulseaudio -D")
+
 
     
 
