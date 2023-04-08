@@ -134,7 +134,7 @@ local virtualmachine    = "virtualbox"
 awful.util.terminal = terminal
 -- awful.util.tagnames = {  "➊", "➋", "➌", "➍", "➎", "➏", "➐", "➑", "➒" }
 -- awful.util.tagnames = { "[1]", "[2]", "[3]", "[4]", "[5]", "[6]", "[7]", "[8]", "[9]"}
-awful.util.tagnames = {  "<web>", "<dev>", "<code>", "<git>", "<music>", "<file>", "<notes>", "<social>", "YEA" }
+awful.util.tagnames = {  "<web>", "<dev>", "<code>", "<git>", "<music>", "<file>", "<notes>", "<social>", "__ext__" }
 -- awful.util.tagnames = {  "[web]", "[dev]", "[code]", "[git]", "[music]", "[file]", "[todo]", "[disc]", "[class]" }
 -- awful.util.tagnames = {  "web/", "dev/", "code/", "git/", "music/", "file/", "todo/", "disc/", "class" }
 -- awful.util.tagnames = {  "a", "r", "c", "h", "l", "i", "n", "u", "x" }
@@ -940,8 +940,8 @@ awful.rules.rules = {
     -- { rule = { class = browser1 },
     --   properties = { screen = 1, tag = awful.util.tagnames[6], switchtotag = true  } },
 
-    { rule = { class = "Joplin" },
-        properties = { screen = 1, tag = awful.util.tagnames[7], switchtotag = false } },
+    { rule = { class = "Spotify Premium" },
+        properties = { screen = 1, tag = awful.util.tagnames[5], switchtotag = true } },
 
     { rule = { class = "notion-snap" },
         properties = { screen = 1, tag = awful.util.tagnames[7], switchtotag = false } },
@@ -964,6 +964,9 @@ awful.rules.rules = {
 
     { rule = { class = "Code" },
         properties = { screen = 1, tag = awful.util.tagnames[3], switchtotag = true  } },
+
+    { rule = { class = "ipykernel_launcher.py" },
+        properties = { screen = 1, tag = awful.util.tagnames[3], switchtotag = false  } },
 
     --    { rule = { class = "Geany" },
          --  properties = { screen = 1, tag = awful.util.tagnames[2], switchtotag = true  } },
@@ -1054,6 +1057,8 @@ awful.rules.rules = {
           "Peek",
           "Skype",
           "System-config-printer.py",
+          "ipykernel_launcher.py",
+          "tank_kills_v2",
           "Sxiv",
           "Unetbootin.elf",
           "Wpa_gui",
@@ -1168,7 +1173,7 @@ awful.spawn.with_shell("sudo timedatectl set-ntp True")
 awful.spawn.with_shell("picom -b --config ~/.config/awesome/picom.conf")
 
 
-awful.spawn.with_shell("mpv /home/sugarman/.config/awesome/start.mp3")
+-- awful.spawn.with_shell("mpv /home/sugarman/.config/awesome/start.mp3")
 
 -- Loading Sound devices and drivers
 awful.spawn.with_shell("pulseaudio -k")
